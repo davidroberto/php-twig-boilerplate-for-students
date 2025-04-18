@@ -1,0 +1,34 @@
+<html>
+
+	<head>
+		<link rel="stylesheet" href="../public/assets/style.css">
+	</head>
+
+	<body>
+
+		<main>
+			<section class="list-articles">
+
+				{% for article in articles %}
+
+					{% if article.is_published %}
+
+						<article class="article">
+
+							<h2 class="article-title">{{ article.title }}</h2>
+							<img class="article-image" src="{{ article.image }}" />
+							<p  class="article-date">Créé le {{ article.createdAt | date }}</p>
+							<p  class="article-content">{{ article.content}}</p>
+
+						</article>
+
+					{% endif %}
+
+				{% endfor %}
+
+			</section>
+
+		</main>
+	</body>
+
+</html>
